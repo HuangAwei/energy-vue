@@ -31,6 +31,7 @@
                         <span>系统管理</span>
                     </template>
                     <el-menu-item index="/system/user">用户管理</el-menu-item>
+                    <el-menu-item index="/system/dept">部门管理</el-menu-item>
                     <el-menu-item index="/system/dict">字典项管理</el-menu-item>
                     <el-menu-item index="/system/dictData">字典值管理</el-menu-item>
                 </el-submenu>

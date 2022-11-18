@@ -50,6 +50,11 @@ const routes = [
         hidden: true
       },
       {
+        path: 'system/dept',
+        component: () => import('@/views/system/dept'),
+        hidden: true
+      },
+      {
         path: 'system/dict',
         component: () => import('@/views/system/dict'),
         hidden: true
