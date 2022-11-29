@@ -94,7 +94,7 @@
                 })
             },
             getEnergyList() {
-                this.$axios.get("http://192.168.10.194:8888/energyType/getAll")
+                this.$axios.get("http://127.0.0.1:8888/energyType/getAll")
                     .then((res) => {
                         res.data.data.forEach((item) => {
                             this.energyConsumptionVo.energyList.push({energyId: item.id, value: 0, name: item.name})
@@ -105,7 +105,7 @@
                     });
             },
             getInstitutionList() {
-                this.$axios.get("http://192.168.10.194:8888/institutions/getAll")
+                this.$axios.get("http://127.0.0.1:8888/institutions/getAll")
                     .then((res) => {
                         let key = 0
                         this.institutionList = [...res.data.data]
@@ -131,7 +131,7 @@
                 }
                 this.$axios({
                     method: "post",
-                    url: "http://192.168.10.194:8888/energyConsumption/getEnergyConsumption",
+                    url: "http://127.0.0.1:8888/energyConsumption/getEnergyConsumption",
                     data: this.energyConsumptionVo
                 }).then((res) => {
                     let result = res.data.success

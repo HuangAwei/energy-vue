@@ -115,7 +115,7 @@
                 this.onSubmit()
             },
             del(id) {
-                this.$axios.post('http://192.168.10.194:8888/institutions/remove', [id]).then((response) => {
+                this.$axios.post('http://127.0.0.1:8888/institutions/remove', [id]).then((response) => {
                     let result = response.data.success
                     this.$message({
                         message: result? '删除成功' : '删除失败',
@@ -128,7 +128,7 @@
                 })
             },
             save() {
-                this.$axios.post('http://192.168.10.194:8888/institutions/save',this.institutionInfo).then((response) => {
+                this.$axios.post('http://127.0.0.1:8888/institutions/save',this.institutionInfo).then((response) => {
                     let result = response.data.success
                     this.$message({
                         message: result? '保存成功' : '保存失败:' + response.data.message,
@@ -159,7 +159,7 @@
                 this.dialogFormVisible = true
             },
             getTypeList() {
-                this.$axios.get('http://192.168.10.194:8888/institutions/getAllType').then((response) => {
+                this.$axios.get('http://127.0.0.1:8888/institutions/getAllType').then((response) => {
                     this.typeList = response.data.data
                     response.data.data.forEach(item => {
                         this.$set(this.typeName,item.id,item.name)
@@ -173,7 +173,7 @@
                 this.onSubmit()
             },
             onSubmit() {
-                this.$axios.get('http://192.168.10.194:8888/institutions/page', {params:this.getListData}).then((response) => {
+                this.$axios.get('http://127.0.0.1:8888/institutions/page', {params:this.getListData}).then((response) => {
                     this.institutionList = response.data.data.records
                     this.pages = response.data.data.pages
                     this.institutionList.forEach(item => {

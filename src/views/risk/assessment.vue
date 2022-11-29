@@ -1,5 +1,5 @@
 <template>
-    <div style="width: 100%;height: 100%;text-align: center;padding-top: 20px">
+    <div style="width: 100%;height: 100%;text-align: center;padding-top: 20px;overflow: scroll">
 
         <el-row :gutter="20">
             <el-col :span="4"><div class="grid-content bg-purple">评价语录</div></el-col>
@@ -634,7 +634,7 @@
                 this.level = 10
                 this.$axios({
                     method: "post",
-                    url: "http://192.168.10.194:8888/risk/riskAssessment",
+                    url: "http://127.0.0.1:8888/risk/riskAssessment",
                     data: {
                         name: this.name,
                         r: this.R

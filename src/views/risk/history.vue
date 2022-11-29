@@ -109,7 +109,7 @@
                 return "text-align:center";
             },
             del(id) {
-                this.$axios.post('http://192.168.10.194:8888/risk/remove', [id]).then((response) => {
+                this.$axios.post('http://127.0.0.1:8888/risk/remove', [id]).then((response) => {
                     let result = response.data.success
                     this.$message({
                         message: result? '删除成功' : '删除失败',
@@ -126,7 +126,7 @@
                 this.onSubmit()
             },
             onSubmit() {
-                this.$axios.get('http://192.168.10.194:8888/risk/page', {params:this.getListData}).then((response) => {
+                this.$axios.get('http://127.0.0.1:8888/risk/page', {params:this.getListData}).then((response) => {
                     this.historyList = response.data.data.records
                     this.pages = response.data.data.pages
                 }).catch((err) => {

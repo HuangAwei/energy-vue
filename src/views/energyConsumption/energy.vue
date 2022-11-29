@@ -101,7 +101,7 @@
                 this.onSubmit()
             },
             del(id) {
-                this.$axios.post('http://192.168.10.194:8888/energyType/remove', [id]).then((response) => {
+                this.$axios.post('http://127.0.0.1:8888/energyType/remove', [id]).then((response) => {
                     let result = response.data.success
                     this.$message({
                         message: result? '删除成功' : '删除失败',
@@ -114,7 +114,7 @@
                 })
             },
             save() {
-                this.$axios.post('http://192.168.10.194:8888/energyType/save',this.energyInfo).then((response) => {
+                this.$axios.post('http://127.0.0.1:8888/energyType/save',this.energyInfo).then((response) => {
                     let result = response.data.success
                     this.$message({
                         message: result? '保存成功' : '保存失败:' + response.data.message,
@@ -149,7 +149,7 @@
                 this.onSubmit()
             },
             onSubmit() {
-                this.$axios.get('http://192.168.10.194:8888/energyType/page', {params:this.getListData}).then((response) => {
+                this.$axios.get('http://127.0.0.1:8888/energyType/page', {params:this.getListData}).then((response) => {
                     this.energyList = response.data.data.records
                     this.pages = response.data.data.pages
                 }).catch((err) => {

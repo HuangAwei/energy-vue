@@ -146,7 +146,7 @@
                 this.onSubmit()
             },
             del(row) {
-                this.$axios.get('http://192.168.10.194:8888/energyConsumption/remove/'+ row.institution_id + "/" + row.date, ).then((response) => {
+                this.$axios.get('http://127.0.0.1:8888/energyConsumption/remove/'+ row.institution_id + "/" + row.date, ).then((response) => {
                     let result = response.data.success
                     this.$message({
                         message: result? '删除成功' : '删除失败',
@@ -159,7 +159,7 @@
                 })
             },
             info(row) {
-                this.$axios.get('http://192.168.10.194:8888/energyConsumption/getEnergyByInstitutionId/'+ row.institution_id + "/" + row.date, ).then((response) => {
+                this.$axios.get('http://127.0.0.1:8888/energyConsumption/getEnergyByInstitutionId/'+ row.institution_id + "/" + row.date, ).then((response) => {
                     this.infoData.list = response.data.data
                 }).catch((err) => {
                     console.log(err);
@@ -172,7 +172,7 @@
                 this.onSubmit()
             },
             onSubmit() {
-                this.$axios.get('http://192.168.10.194:8888/energyConsumption/page', {params:this.getListData}).then((response) => {
+                this.$axios.get('http://127.0.0.1:8888/energyConsumption/page', {params:this.getListData}).then((response) => {
                     this.historyList = response.data.data.records
                     this.pages = response.data.data.pages
                 }).catch((err) => {
